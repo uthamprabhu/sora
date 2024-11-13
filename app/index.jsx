@@ -5,7 +5,7 @@ import { Text, View } from 'react-native'
 const index = () => {
   return (
     <View className="flex-1 items-center justify-center">
-      <Text className="text-3xl">sora!!!</Text>
+      <Text className="text-5xl">sora!!!</Text>
       <StatusBar style='auto' />
       <Link href="/profile" style={{color: 'blue'}}>Go to profile</Link>
     </View>
