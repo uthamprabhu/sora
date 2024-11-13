@@ -1,11 +1,11 @@
 import { Link } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 
 const index = () => {
   return (
-    <View style={styles.container}>
-      <Text>sora!!!</Text>
+    <View className="flex-1 items-center justify-center">
+      <Text className="text-3xl">sora!!!</Text>
       <StatusBar style='auto' />
       <Link href="/profile" style={{color: 'blue'}}>Go to profile</Link>
     </View>
@@ -13,12 +13,3 @@ const index = () => {
 }
 
 export default index
-
-const styles = StyleSheet.create({
-    container: {
-      display: 'flex',
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
-    }
-  })
