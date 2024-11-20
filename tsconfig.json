@@ -6,6 +6,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
+    ".expo/types/router.d.js",
     "nativewind-env.d.ts"
   ]
 }
