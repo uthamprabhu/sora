@@ -6,7 +6,7 @@ import { icons } from "../../constants";
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className="mt-5 flex items-center justify-center gap-2">
+        <View className="mt-6 flex items-center w-[60px] justify-center gap-2">
             <Image
                 source={icon}
                 resizeMode="contain"
@@ -103,6 +103,9 @@ const TabLayout = () => {
                     }}
                 />
             </Tabs>
+
+            <StatusBar backgroundColor="#161622" style="light" />
+
         </>
     );
 };
