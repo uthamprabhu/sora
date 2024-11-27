@@ -24,7 +24,7 @@ const zoomOut = {
 
 const TrendingItem = ({ activeItem, item }) => {
     const [play, setPlay] = useState(false)
-    const player = useVideoPlayer({uri: item.video})
+    const player = useVideoPlayer(item.video)
 
     const handlePlayPause = () => {
         if (play) {

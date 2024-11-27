@@ -2,11 +2,23 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { icons } from '../constants'
 
 import React, { useState } from 'react'
+import { useVideoPlayer, VideoView } from 'expo-video'
 
 const VideoCard = ({ video: { title, thumbnail, video,
     creator: { username, avatar } } }) => {
 
     const [play, setPlay] = useState(false)
+
+    const player = useVideoPlayer(video)
+
+    const handlePlayPause = () => {
+        if (play) {
+            player.pause()
+        } else {
+            player.play()
+        }
+        setPlay(!play)
+    };
 
     return (
         <View className="flex-col items-center px-4 mb-14">
@@ -47,7 +59,18 @@ const VideoCard = ({ video: { title, thumbnail, video,
             </View>
 
             {play ? (
-                <Text className="text-white">Playing </Text>
+                <VideoView
+                    player={player}
+                    className="w-full h-60 rounded-xl mt-3"
+                    contentFit='contain'
+                    allowsFullscreen={true}
+                    allowsPictureInPicture={true}
+                    onPlaybackStatusUpdate={(status) => {
+                        if (status.didJustFinish) {
+                            setPlay(false); // Reset play state when video finishes
+                        }
+                    }}
+                />
             ) : (
                 <TouchableOpacity
                     activeOpacity={0.7}
