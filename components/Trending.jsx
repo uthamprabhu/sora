@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native'
-import * as Animatable from 'react-native-animatable'
-import { icons } from '../constants'
-import { Video ,ResizeMode } from 'expo-av'
+import { useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import { icons } from '../constants';
+import { VideoView, useVideoPlayer } from 'expo-video';
 
 const zoomIn = {
     0: {
@@ -11,7 +11,7 @@ const zoomIn = {
     1: {
         scale: 1.1
     }
-}
+};
 
 const zoomOut = {
     0: {
@@ -20,10 +20,20 @@ const zoomOut = {
     1: {
         scale: 0.9
     }
-}
+};
 
 const TrendingItem = ({ activeItem, item }) => {
     const [play, setPlay] = useState(false)
+    const player = useVideoPlayer({uri: item.video})
+
+    const handlePlayPause = () => {
+        if (play) {
+            player.pause()
+        } else {
+            player.play()
+        }
+        setPlay(!play)
+    };
 
     return (
         <Animatable.View
@@ -32,22 +42,29 @@ const TrendingItem = ({ activeItem, item }) => {
             duration={500}
         >
             {play ? (
-                <Video 
-
+                <VideoView
+                    player={player}
+                    className="w-52 h-72 rounded-[35px] mt-3 bg-white/10"
+                    contentFit='contain'
+                    allowsFullscreen={true}
+                    allowsPictureInPicture={true}
+                    onPlaybackStatusUpdate={(status) => {
+                        if (status.didJustFinish) {
+                            setPlay(false); // Reset play state when video finishes
+                        }
+                    }}
                 />
             ) : (
                 <TouchableOpacity
                     className="relative justify-center items-center"
                     activeOpacity={0.7}
-                    onPress={() => setPlay(true)}
+                    onPress={handlePlayPause} // Toggle play/pause on press
                 >
                     <ImageBackground
                         source={{ uri: item.thumbnail }}
-                        className="w-52 h-72 rounded-[35px] my-5 
-                    overflow-hidden shadow-lg shadow-black/40"
+                        className="w-52 h-72 rounded-[35px] my-5 overflow-hidden shadow-lg shadow-black/40"
                         resizeMode='cover'
                     />
-
                     <Image
                         source={icons.play}
                         className="w-12 h-12 absolute"
@@ -56,17 +73,17 @@ const TrendingItem = ({ activeItem, item }) => {
                 </TouchableOpacity>
             )}
         </Animatable.View>
-    )
-}
+    );
+};
 
 const Trending = ({ posts }) => {
-    const [activeItem, setActiveItem] = useState(posts[0])
+    const [activeItem, setActiveItem] = useState(posts[0]);
 
     const viewableItemsChanged = ({ viewableItems }) => {
         if (viewableItems.length > 0) {
-            setActiveItem(viewableItems[0].key)
+            setActiveItem(viewableItems[0].key);
         }
-    }
+    };
 
     return (
         <FlatList
@@ -80,12 +97,12 @@ const Trending = ({ posts }) => {
             )}
             onViewableItemsChanged={viewableItemsChanged}
             viewabilityConfig={{
-                itemVisiblePercentThreshold: 70
+                itemVisiblePercentThreshold: 70,
             }}
             contentOffset={{ x: 170 }}
             horizontal
         />
-    )
-}
+    );
+};
 
-export default Trending
+export default Trending;
