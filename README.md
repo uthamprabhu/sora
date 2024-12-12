@@ -1,50 +1,117 @@
-# Welcome to your Expo app 👋
+# Sora - AI Reels Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Sora is a cutting-edge AI Reels application that showcases AI-generated images alongside the prompts used to create them. Built with modern tools and technologies like React Native, Expo, Tailwind CSS, and Appwrite, Sora delivers a smooth and visually appealing experience for users who want to explore the creative possibilities of AI.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **AI-Generated Reels**: Browse stunning AI-generated images.
+- **Prompt Display**: See the exact prompts used to generate the AI content.
+- **Responsive Design**: Tailored for seamless use across various devices.
+- **Modern Tech Stack**: Developed using React Native, Expo, Tailwind CSS, and Appwrite for robust functionality and great performance.
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## Prerequisites
 
-In the output, you'll find options to open the app in a
+Before you get started, ensure you have the following installed:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Node.js](https://nodejs.org/) (v14 or above)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo CLI](https://expo.dev/)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Setup Instructions
 
-When you're ready, run:
+Follow these steps to clone and run the app locally:
 
+### 1. Clone the Repository
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/sora-ai-reels.git
+cd sora-ai-reels
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn more
+### 3. Configure Appwrite
 
-To learn more about developing your project with Expo, look at the following resources:
+Sora uses Appwrite as its backend. To set it up:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Install and configure [Appwrite](https://appwrite.io/docs) on your server.
+2. Create a new project in Appwrite and set up the necessary collections for storing AI reels and prompts.
+3. Update the `appwriteConfig` in your project to include your Appwrite endpoint, project ID, and API key.
 
-## Join the community
+### 4. Start the Development Server
+```bash
+expo start
+```
 
-Join our community of developers creating universal apps.
+This will start the Expo development server. You can scan the QR code using the Expo Go app on your phone or run the app in an emulator.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Running on a Device or Emulator
+
+- **iOS**: Open in Xcode or use the Expo Go app.
+- **Android**: Use Android Studio or scan the Expo QR code.
+
+For more details, refer to the [Expo Documentation](https://docs.expo.dev/).
+
+---
+
+## Tech Stack
+
+- **Frontend**: React Native, Tailwind CSS
+- **Backend**: Appwrite
+- **Other Tools**: Expo, JSMastery patterns
+
+---
+
+## Project Structure
+
+```plaintext
+📂 sora-ai-reels
+├── 📂 assets         # Static assets (images, icons, etc.)
+├── 📂 components     # Reusable UI components
+├── 📂 screens        # App screens (Home, Details, etc.)
+├── 📂 utils          # Utility functions and constants
+├── 📄 App.js         # Entry point of the application
+├── 📄 tailwind.config.js # Tailwind CSS configuration
+└── 📄 package.json   # Project dependencies
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add feature-name'`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **Email**: your-email@example.com
+- **GitHub**: [your-username](https://github.com/your-username)
+
+Enjoy exploring the possibilities with Sora! 🚀
