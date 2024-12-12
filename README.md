@@ -13,6 +13,12 @@ Sora is a cutting-edge AI Reels application that showcases AI-generated images a
 
 ---
 
+## App Preview
+
+![Sora App Preview](./assets/app-preview/preview1)
+
+---
+
 ## Prerequisites
 
 Before you get started, ensure you have the following installed:
