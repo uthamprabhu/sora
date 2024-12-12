@@ -111,7 +111,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have any questions or feedback, feel free to reach out:
 
-- **Email**: your-email@example.com
-- **GitHub**: [your-username](https://github.com/your-username)
+- **Email**: uthamprabhu1@gmail.com
+- **GitHub**: [uthamprabhu](https://github.com/uthamprabhu)
 
 Enjoy exploring the possibilities with Sora! 🚀
