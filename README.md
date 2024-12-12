@@ -15,7 +15,7 @@ Sora is a cutting-edge AI Reels application that showcases AI-generated images a
 
 ## App Preview
 
-![Sora App Preview](./assets/app-preview/preview1)
+![Sora App Preview](./assets/app-previews/preview1.png)
 
 ---
 
