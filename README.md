@@ -84,9 +84,9 @@ For more details, refer to the [Expo Documentation](https://docs.expo.dev/).
 
 ## Tech Stack
 
-- **Frontend**: React Native, Tailwind CSS
+- **Frontend**: React Native, Tailwind CSS, Native Wind
 - **Backend**: Appwrite
-- **Other Tools**: Expo, JSMastery patterns
+- **Other Tools**: Expo Go, Expo
 
 ---
 
@@ -114,12 +114,6 @@ Contributions are welcome! To contribute:
 3. Make your changes and commit them: `git commit -m 'Add feature-name'`.
 4. Push to the branch: `git push origin feature-name`.
 5. Open a pull request.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
